@@ -13,55 +13,48 @@
 
 using namespace std;
 
-string m_get_info_file(const char * argv[])
+string m_get_secondary_ins(int argc, const char * argv[], string seci)
 {
-    // -- need work
-}
-
-string m_get_scale(const char * argv[])
-{
-    // -- need work
-}
-
-string m_get_type(const char * argv[])
-{
-    // -- need work: 正在写这里。
-    // 找出4个指令中前面是-type=的指令（显然首先要求指令长度大于6），然后解析后面的内容并返回。
-    // 如果没有找到，就返回一个空串。
+    int len = seci.length();
+    for (int i = 0; i < argc; i++)
+    {
+        string strl = string(argv[i]);
+        if (strl.length() > len && strl.substr(0, len) == seci)
+        {
+            return strl.substr(len);
+        }
+    }
+    return "";
 }
 
 void work(int argc, const char * argv[])
 {
-    // 首先分析指令，检查二级指令是否有三个，如果不是三个就报错退出。
-
-    // 在这里也会依次检查二级指令是不是-type=, -scale=, -info-file=，如果不是就仍然报错退出。
-
-    // Analyze the instruction.
-    if (argc != 4)
+    // Analyze secondary instructions.
+    if (argc != 6)
     {
-        cout << "[Error] The instruction is incorrect." << endl;
+        cout << "[Error] The secondary instruction number is incorrect." << endl;
         return ;
     }
+    string type = m_get_secd_ins(argc, argv, "-type=");
+    string scale = m_get_secd_ins(argc, argv, "-scale=");
+    string info_file = m_get_secd_ins(argc, argv, "-info-file=");
+    string init_node = m_get_secd_ins(argc, argv, "-init-node=");
+    string out_file = m_get_secd_ins(argc, argv, "-out-file=");
 
-    string type = m_get_type(argv);
-    string scale = m_get_scale(argv);
-    string info_file= m_get_info_file(argv);
-
+    // Perform the iris generation.
     if (type == "disc")
     {
-        // Generate disc type iris map.
-        // -- need work
-        // scale, info_file
+        // Generate disc type image.
+        t1_access(scale, info_file, init_node, out_file); // -- need work
     }
     else if (type == "rect")
     {
-        // Generate rect type iris map.
-        // -- need work
-        // scale, info_file
+        // Generate rect type image.
+        t2_access(scale, info_file, init_node, out_file); // -- need work
     }
     else
     {
-        cout << "[Error] The instruction is incorrect." << endl;
+        cout << "[Error] The instruction \"type\" is incorrect." << endl;
     }
 }
 
