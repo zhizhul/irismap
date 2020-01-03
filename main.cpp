@@ -10,10 +10,13 @@
 
 #include <iostream>
 #include <string>
+#include "definition.hpp"
+#include "type1_disc.hpp"
+#include "type2_rect.hpp"
 
 using namespace std;
 
-string m_get_secondary_ins(int argc, const char * argv[], string seci)
+string m_get_secd_ins(int argc, const char * argv[], string seci)
 {
     int len = seci.length();
     for (int i = 0; i < argc; i++)
@@ -45,12 +48,12 @@ void work(int argc, const char * argv[])
     if (type == "disc")
     {
         // Generate disc type image.
-        t1_access(scale, info_file, init_node, out_file); // -- need work
+        t1_access(scale, info_file, init_node, out_file);
     }
     else if (type == "rect")
     {
         // Generate rect type image.
-        t2_access(scale, info_file, init_node, out_file); // -- need work
+        t2_access(scale, info_file, init_node, out_file);
     }
     else
     {
