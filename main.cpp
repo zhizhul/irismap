@@ -57,7 +57,7 @@ void work(int argc, const char * argv[])
     }
     else
     {
-        cout << "[Error] The instruction \"type\" is incorrect." << endl;
+        cout << "[Error] The instruction \"-type\" is incorrect." << endl;
     }
 }
 

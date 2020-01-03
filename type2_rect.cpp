@@ -21,6 +21,8 @@ using namespace std;
 
 void t2_access(string scale, string info_file, string init_node, string out_file)
 {
-    // irismap -type=rect -scale=*pixel radius* -info-file=*iris info* -init-node=*node number* -out-file=*iris img*
+    // -- need work
     
+    // irismap -type=rect -scale=*pixel radius* -info-file=*iris info* -init-node=*node number* -out-file=*iris img*
+
 }

@@ -6,4 +6,7 @@
 
 // Define parameters, data structures, global variables ... in the file.
 
+// Base number
+int base_num;
+
 #include "definition.hpp"
