@@ -1,6 +1,6 @@
 //
 //  type2_rect.hpp
-//  Iris
+//  Irismap
 //
 //  Created by Zhizhu Liu on 2020/1/3.
 //
@@ -12,6 +12,6 @@
 
 using namespace std;
 
-void t2_access(string scale, string info_file, string init_node, string out_file);
+void t2_access(string scale, string info_file, string init_node_number, string out_file);
 
 #endif /* type2_rect_hpp */

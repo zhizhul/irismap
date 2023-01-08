@@ -1,6 +1,6 @@
 //
 //  main.cpp
-//  Iris
+//  Irismap
 //
 //  Created by Zhizhu Liu on 2019/12/28.
 //

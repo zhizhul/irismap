@@ -1,6 +1,6 @@
 //
 //  definition.hpp
-//  Iris
+//  Irismap
 //
 //  Created by Zhizhu Liu on 2020/1/3.
 
@@ -13,6 +13,11 @@
 
 using namespace std;
 
+// Base number
+extern int base_num;
+// Total dimension number
+extern int total_dimension;
+
 // Space tree node
 struct SpaceTreeNode
 {
@@ -24,10 +29,12 @@ struct SpaceTreeNode
     int sup;
     // Region expression
     string subspace;
+    // Static dimension number
+    int static_dimension;
     // Parent node pointer
     struct SpaceTreeNode *parent;
     // Child node pointers
-    struct SpaceTreeNode *children;
+    struct SpaceTreeNode **children;
     // Number of child nodes
     int children_num;
 
@@ -37,7 +44,15 @@ struct SpaceTreeNode
     double density;
 };
 
-// Base number
-extern int base_num;
+// File name of iris information
+#define _IRIS_FILE "iris_info"
+// Base color information (RGB)
+#define _BASE_R 0
+#define _BASE_G 0
+#define _BASE_B 128
+// Alias color information (RGB)
+#define _ALIAS_R 128
+#define _ALIAS_G 0
+#define _ALIAS_B 0
 
 #endif  /* definition_hpp */
